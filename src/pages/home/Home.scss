@@ -1,0 +1,25 @@
+.home-links {
+    li {
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+
+            span {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 17px;
+                font-weight: 400;
+            }
+        }
+
+        .active {
+            h5 {
+                font-weight: 500;
+            }
+        }
+    }
+}
