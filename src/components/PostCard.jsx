@@ -73,7 +73,7 @@ const PostCard = ({ item, page }) => {
                 }
             </div>
             <Link to={`/post/${_id}`} >
-                <div className='w-full h-auto border mb-2 flex items-center justify-center'>
+                <div className='w-full h-auto mb-2 flex items-center justify-center'>
                     <img src={image.url} className="w-full" alt="" />
                 </div>
             </Link>
