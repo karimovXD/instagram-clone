@@ -60,56 +60,56 @@ const Home = () => {
 
     return (
         <main className='flex items-start'>
-            <aside className='h-svh w-72 border-r-2 p-6 flex flex-col items-start justify-between sticky top-0 bg-white'>
+            <aside className='h-svh w-24 ss:w-72 border-r-2 p-6 flex flex-col items-start justify-between sticky top-0 bg-white'>
                 <div className='w-full flex flex-col items-start justify-start'>
-                    <Link to='/'><img src={InstagramLogo} alt="" className='w-28 mb-3 select-none' /></Link>
-                    <ul className='home-links w-full flex flex-col item-start justify-start gap-5'>
-                        <li>
+                    <Link to='/'><img src={InstagramLogo} alt="" className='w-28 mb-3 select-none hidden ss:block' /></Link>
+                    <ul className='home-links w-full flex flex-col items-center justify-start gap-5 ss:items-start'>
+                        <li className='mb-4 ss:mb-0'>
                             <NavLink to='/'>
                                 <HomeOutlined />
-                                <h5>Home</h5>
+                                <h5 className='hidden ss:block'>Home</h5>
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='mb-4 ss:mb-0'>
                             <NavLink to='/search'>
                                 <SearchOutlined />
-                                <h5>Search</h5>
+                                <h5 className='hidden ss:block'>Search</h5>
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='mb-4 ss:mb-0'>
                             <NavLink to='/b'>
                                 <CompassOutlined />
-                                <h5>Explore</h5>
+                                <h5 className='hidden ss:block'>Explore</h5>
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='mb-4 ss:mb-0'>
                             <NavLink to='c'>
                                 <PlaySquareOutlined />
-                                <h5>Reels</h5>
+                                <h5 className='hidden ss:block'>Reels</h5>
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='mb-4 ss:mb-0'>
                             <NavLink to='d'>
                                 <MessageOutlined />
-                                <h5>Message</h5>
+                                <h5 className='hidden ss:block'>Message</h5>
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='mb-4 ss:mb-0'>
                             <NavLink to='e'>
                                 <HeartOutlined />
-                                <h5>Notification</h5>
+                                <h5 className='hidden ss:block'>Notification</h5>
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='mb-4 ss:mb-0'>
                             <NavLink to='/create'>
                                 <PlusSquareOutlined />
-                                <h5>Create</h5>
+                                <h5 className='hidden ss:block'>Create</h5>
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='mb-4 ss:mb-0'>
                             <NavLink to='/profile'>
                                 <UserOutlined />
-                                <h5>{currentUser?.name}</h5>
+                                <h5 className='hidden ss:block'>{currentUser?.name}</h5>
                             </NavLink>
                         </li>
                     </ul>
@@ -118,12 +118,12 @@ const Home = () => {
                     currentUser ?
                         <li className='flex items-center justify-start cursor-pointer' onClick={handleSignOut}>
                             <EnterOutlined className='text-[24px] font-semibold mr-[10px]' />
-                            <span className='text-[17px] font-medium'>Sign out</span>
+                            <span className='text-[17px] font-medium hidden ss:block'>Sign out</span>
                         </li> :
                         <Link to='/login'>
                             <li className='flex items-center justify-start cursor-pointer' onClick={handleSignOut}>
                                 <LoginOutlined className='text-[24px] font-semibold mr-[10px]' />
-                                <span className='text-[17px] font-medium'>log in</span>
+                                <span className='text-[17px] font-medium hidden ss:block'>log in</span>
                             </li>
                         </Link>
                 }
@@ -136,10 +136,22 @@ const Home = () => {
                                 return <PostCard key={i} item={item} />;
                             }) :
                                 (
-                                    <div className='flex flex-col gap-20'>
-                                        <OnePostSkeleton width={500} height={380} />
-                                        <OnePostSkeleton width={500} height={380} />
-                                        <OnePostSkeleton width={500} height={380} />
+                                    <div>
+                                        <div className='hidden sm:flex flex-col gap-20'>
+                                            <OnePostSkeleton width={500} height={380} />
+                                            <OnePostSkeleton width={500} height={380} />
+                                            <OnePostSkeleton width={500} height={380} />
+                                        </div>
+                                        <div className='hidden sm:hidden ss:flex flex-col gap-20'>
+                                            <OnePostSkeleton width={300} height={300} />
+                                            <OnePostSkeleton width={300} height={300} />
+                                            <OnePostSkeleton width={300} height={300} />
+                                        </div>
+                                        <div className='ss:hidden flex flex-col gap-20'>
+                                            <OnePostSkeleton width={200} height={270} />
+                                            <OnePostSkeleton width={200} height={270} />
+                                            <OnePostSkeleton width={200} height={270} />
+                                        </div>
                                     </div>
                                 )
                         }</div>

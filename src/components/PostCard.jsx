@@ -49,13 +49,13 @@ const PostCard = ({ item, page }) => {
     }
 
     return (
-        <div className='max-w-[500px] mb-10 overflow-hidden'>
-            <div className="flex items-center justify-between mb-1">
+        <div className='max-w-[200px] ss:max-w-[300px] sm:max-w-[500px] mb-10 overflow-hidden '>
+            <div className="flex flex-col-reverse items-center justify-between mb-1 ss:flex-row">
                 <div className="flex items-center justify-left py-1 gap-2">
                     <div className=""><UserOutlined /></div>
                     <div className="flex items-center justify-start">
-                        <h3 className='font-medium'>{author[0].name} <CheckCircleOutlined className='text-blue-400 ml-1' /></h3>
-                        <span className='w-1 h-1 bg-black rounded-full mx-[6px]'></span>
+                        <h3 className='font-medium'>{author[0].name} <CheckCircleOutlined className='text-blue-400 ml-1 text-xs ss:text-md' /></h3>
+                        <span className='w-[2px] h-[2px] ss:w-1 ss:h-1 bg-black rounded-full mx-[4px] ss:mx-[6px]'></span>
                         <span>{views} <EyeOutlined /></span>
                     </div>
                 </div>
@@ -63,8 +63,7 @@ const PostCard = ({ item, page }) => {
                     page === 'profile' ?
                         <div>
                             <Popover content={
-                                <div className='flex justify-between'>
-                                    <Button>Edit</Button>
+                                <div className='flex justify-center'>
                                     <Button onClick={() => handleDelete()} loading={postLoading}>Delete</Button>
                                 </div>} title='Options' trigger='click'>
                                 <Button className='flex items-center justify-center'><MoreOutlined className='leading-3 cursor-pointer text-xl' /></Button>

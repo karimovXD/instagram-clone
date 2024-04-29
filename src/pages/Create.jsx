@@ -23,7 +23,7 @@ const Create = () => {
 
   return (
     <div className='w-full flex justify-center items-center'>
-      <div className='w-[600px] flex flex-col items-center justify-start py-5'>
+      <div className='w-full ss:w-[400px] sm:w-[500px] md:w-[700px] flex flex-col items-center justify-start py-5 px-5 ss:px-0'>
         <input id='post' type='file' accept='image/*' className='border hidden' onChange={e => setImage(e.target.files[0])} />
         <label htmlFor="post" className='w-full h-[400px] border-2 border-sky-200 border-dashed flex items-center justify-center text-2xl rounded-md'>
           {

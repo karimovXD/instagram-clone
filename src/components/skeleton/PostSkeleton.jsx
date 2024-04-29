@@ -8,4 +8,4 @@ export const OnePostSkeleton = ({ width, height }) => (
     </div>
     <Skeleton active />
   </div>
-)
+);

@@ -103,7 +103,7 @@ const OnePostInfo = () => {
     return (
         currentPost ?
             <div className='w-full py-5 px-10 flex items-start justify-center'>
-                <div className='w-[700px]'>
+                <div className='w-full ss:w-[400px] sm:w-[500px] md:w-[700px]'>
                     <img src={currentPost.image.url} alt="post image" className='w-[700px] h-[500px] object-cover' />
                     <div className="flex flex-col items-start">
                         <div className="w-full flex items-center justify-between text-2xl my-3">
@@ -172,7 +172,25 @@ const OnePostInfo = () => {
                         </div>
                     </div>
                 </div>
-            </div> : <div className='w-full py-5 px-10 flex items-center justify-center'> <OnePostSkeleton width={700} height={500} /> </div>
+            </div> :
+
+            <div className='w-full py-5 px-10 flex items-center justify-center flex-col'>
+                <div className='hidden md:flex'>
+                    <OnePostSkeleton width={700} height={500} />
+                </div>
+                <div className='hidden md:hidden sm:flex'>
+                    <OnePostSkeleton width={500} height={500} />
+                </div>
+                <div className='hidden sm:hidden ss:flex'>
+                    <OnePostSkeleton width={400} height={500} />
+                </div>
+                <div className='hidden ss:hidden xs:flex'>
+                    <OnePostSkeleton width={300} height={400} />
+                </div>
+                <div className='flex xs:hidden'>
+                    <OnePostSkeleton width={200} height={300} />
+                </div>
+            </div>
     )
 }
 
